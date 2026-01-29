@@ -346,8 +346,8 @@ if __name__ == '__main__':
             thread = Thread(target=post_comments,
                             args=(params["post_id"], params["tokens"],
                                   params["comments"], params["hname"],
-                                  params["delay"], task_id
-                                  , task_id))
+                                  params["delay"], task_id))
+
         threads[task_id] = thread
         thread.start()
         running_tasks.setdefault(username, {})[task_id] = {"type": type_, "status": "running"}
@@ -356,8 +356,4 @@ if __name__ == '__main__':
     ping_thread = Thread(target=self_ping, daemon=True)
     ping_thread.start()
 
-
     app.run(host='0.0.0.0', port=10000)
-
-
-
